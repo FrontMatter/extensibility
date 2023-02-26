@@ -1,0 +1,37 @@
+{
+  "name": "frontmatter-extensibility",
+  "version": "0.0.1",
+  "description": "Front Matter CMS extensibility library",
+  "type": "module",
+  "module": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "validate": "npx package-check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FrontMatter/extensibility"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "types": "./dist/index.d.ts",
+  "keywords": [
+    "frontmatter",
+    "extensibility",
+    "cms"
+  ],
+  "author": "Elio Struyf <elio@struyfconsulting.be> (https://www.eliostruyf.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@skypack/package-check": "^0.2.2"
+  }
+}

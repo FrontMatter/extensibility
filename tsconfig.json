@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+		"module": "NodeNext",
+		"target": "ESNext",
+		"outDir": "dist",
+		"lib": [
+			"es6",
+			"DOM"
+		],
+		"typeRoots": [
+			"node_modules/@types"
+		],
+    "declaration": true,
+		"sourceMap": true,
+		"rootDir": "src",
+		"strict": true,
+		"strictNullChecks": true
+	},
+	"exclude": [
+		"node_modules"
+	]
+}
