@@ -4,7 +4,13 @@ This module provides a way to extend the CMS with custom functionality.
 
 ## Usage
 
-TBA
+```js
+import { registerCardFooter } from "https://cdn.skypack.dev/@frontmatter/extensibility";
+
+registerCardFooter(async (filePath, data) => {
+  return `<span>Your HTML</span>`;
+});
+```
 
 ## Issues
 
