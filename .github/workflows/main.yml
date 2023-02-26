@@ -26,7 +26,7 @@ jobs:
       run: npm publish --access public
       if: github.ref == 'refs/heads/master'
       env:
-        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        NODE_AUTH_TOKEN: ${{secrets.FM_NPM_TOKEN}}
         
     - name: Update the package version
       if: github.ref == 'refs/heads/dev'
@@ -36,4 +36,4 @@ jobs:
       run: npm publish --tag next --access public
       if: github.ref == 'refs/heads/dev'
       env:
-        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        NODE_AUTH_TOKEN: ${{secrets.FM_NPM_TOKEN}}
