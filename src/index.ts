@@ -73,7 +73,7 @@ export const registerPanelView = (
  * @param name
  * @param cb
  */
-export const registerCustomFields = (name: string, cb: any) => {
+export const registerCustomField = (name: string, cb: any) => {
   window.fmExternal = window.fmExternal || {};
   window.fmExternal.getCustomFields = window.fmExternal.getCustomFields || [];
 
