@@ -1,6 +1,7 @@
 declare global {
   interface Window {
     fmExternal: {
+      isDevelopment: boolean;
       getCustomFields: {
         name: string;
         html: (
@@ -27,6 +28,12 @@ export interface PanelViewResult {
   title: string;
   content: string;
 }
+
+// Development mode
+export const enableDevelopmentMode = () => {
+  window.fmExternal = window.fmExternal || {};
+  window.fmExternal.isDevelopment = true;
+};
 
 // Dashboard
 

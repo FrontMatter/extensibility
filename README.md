@@ -18,10 +18,20 @@ This module provides a way to extend the CMS with custom functionality.
 
 You can make use of ESM modules in order to make use of the extensibility dependency. We recommend to use the CDN from [Skypack](https://www.skypack.dev/) or [jsdelivr](https://www.jsdelivr.com/).
 
+### Development mode
+
+Turn on the development mode in order to quickly reload the webviews (panel + dashboard) when you make changes to the code.
+
+```js
+import { enableDevelopmentMode } from "https://cdn.jsdelivr.net/npm/@frontmatter/extensibility/+esm";
+
+enableDevelopmentMode();
+```
+
 ### Registering a card footer
 
 ```js
-import { registerCardFooter } from "https://cdn.skypack.dev/@frontmatter/extensibility";
+import { registerCardFooter } from "https://cdn.jsdelivr.net/npm/@frontmatter/extensibility/+esm";
 
 /**
  * @param {string} filePath - The path of the file
@@ -36,7 +46,7 @@ registerCardFooter(async (filePath, metadata) => {
 ### Registering a panel view
 
 ```js
-import { registerPanelView } from "https://cdn.jsdelivr.net/npm/@frontmatter/extensibility@0.0.4/+esm";
+import { registerPanelView } from "https://cdn.jsdelivr.net/npm/@frontmatter/extensibility/+esm";
 
 /**
  * @param {object} data - The metadata of the file
@@ -60,7 +70,7 @@ registerPanelView(async (metadata) => {
 The following example makes use of [lit](https://lit.dev/) to render a custom field, by creating a web component, it makes it easier to have more control over the field.
 
 ```js
-import { registerCustomField } from "https://cdn.skypack.dev/@frontmatter/extensibility";
+import { registerCustomField } from "https://cdn.jsdelivr.net/npm/@frontmatter/extensibility/+esm";
 import { css, html, LitElement } from "https://esm.run/lit";
 
 let CustomFieldValueChange;
