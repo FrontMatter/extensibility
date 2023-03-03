@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://frontmatter.codes">
+    <img alt="Front Matter" src="https://eliostruyf.gallerycdn.vsassets.io/extensions/eliostruyf/vscode-front-matter/8.3.0/1676389253876/Microsoft.VisualStudio.Services.Icons.Default">
+  </a>
+</p>
+
 # Front Matter CMS - Extensibility module
 
 This module provides a way to extend the CMS with custom functionality.
@@ -17,6 +23,12 @@ This module provides a way to extend the CMS with custom functionality.
 ## Usage
 
 You can make use of ESM modules in order to make use of the extensibility dependency. We recommend to use the CDN from [Skypack](https://www.skypack.dev/) or [jsdelivr](https://www.jsdelivr.com/).
+
+URLs:
+
+- `https://cdn.skypack.dev/@frontmatter/extensibility`
+- `https://cdn.jsdelivr.net/npm/@frontmatter/extensibility/+esm`
+- `https://esm.run/@frontmatter/extensibility`
 
 ### Development mode
 
