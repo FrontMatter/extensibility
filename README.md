@@ -40,6 +40,21 @@ import { enableDevelopmentMode } from "https://cdn.jsdelivr.net/npm/@frontmatter
 enableDevelopmentMode();
 ```
 
+### Registering a card image
+
+```js
+import { registerCardImage } from "https://cdn.jsdelivr.net/npm/@frontmatter/extensibility/+esm";
+
+/**
+ * @param {string} filePath - The path of the file
+ * @param {object} data - The metadata of the file
+ * @returns {string} - The HTML to be rendered in the card footer
+ */
+registerCardImage(async (filePath, metadata) => {
+  return `<span>Your HTML</span>`;
+});
+```
+
 ### Registering a card footer
 
 ```js
@@ -149,4 +164,4 @@ registerCustomField("customField", async (value, onChange) => {
 
 ## Issues
 
-Please report any issues you find in the Front Matter CMS issue list.
+Please report any issues you find in the [Front Matter CMS issue list](https://github.com/estruyf/vscode-front-matter/issues).
