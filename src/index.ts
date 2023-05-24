@@ -18,6 +18,25 @@ declare global {
         filePath: string,
         data: any
       ) => Promise<string | undefined>;
+
+      // 8.5.0 extension version
+      getCardTitle: (
+        filePath: string,
+        data: any
+      ) => Promise<string | undefined>;
+      getCardDescription: (
+        filePath: string,
+        data: any
+      ) => Promise<string | undefined>;
+      getCardTags: (
+        filePath: string,
+        data: any
+      ) => Promise<string[] | undefined>;
+      getCardDate: (filePath: string, data: any) => Promise<string | undefined>;
+      getCardStatus: (
+        filePath: string,
+        data: any
+      ) => Promise<string | undefined>;
     };
   }
 }
@@ -92,4 +111,69 @@ export const registerCustomField = (name: string, cb: any) => {
   } else {
     window.fmExternal.getCustomFields.push({ name, html: cb });
   }
+};
+
+/**
+ * Register a card title renderer
+ * @param cb
+ * @since 8.5.0
+ */
+export const registerCardTitle = (
+  cb: (filePath: string, metadata: any) => Promise<string>
+) => {
+  window.fmExternal = window.fmExternal || {};
+
+  window.fmExternal.getCardTitle = cb;
+};
+
+/**
+ * Register a card description renderer
+ * @param cb
+ * @since 8.5.0
+ */
+export const registerCardDescription = (
+  cb: (filePath: string, metadata: any) => Promise<string>
+) => {
+  window.fmExternal = window.fmExternal || {};
+
+  window.fmExternal.getCardDescription = cb;
+};
+
+/**
+ * Register a card tags renderer
+ * @param cb
+ * @since 8.5.0
+ */
+export const registerCardTags = (
+  cb: (filePath: string, metadata: any) => Promise<string[]>
+) => {
+  window.fmExternal = window.fmExternal || {};
+
+  window.fmExternal.getCardTags = cb;
+};
+
+/**
+ * Register a card date renderer
+ * @param cb
+ * @since 8.5.0
+ */
+export const registerCardDate = (
+  cb: (filePath: string, metadata: any) => Promise<string>
+) => {
+  window.fmExternal = window.fmExternal || {};
+
+  window.fmExternal.getCardDate = cb;
+};
+
+/**
+ * Register a card status renderer
+ * @param cb
+ * @since 8.5.0
+ */
+export const registerCardStatus = (
+  cb: (filePath: string, metadata: any) => Promise<string>
+) => {
+  window.fmExternal = window.fmExternal || {};
+
+  window.fmExternal.getCardStatus = cb;
 };
