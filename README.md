@@ -12,8 +12,18 @@ This module provides a way to extend the CMS with custom functionality.
 
 ### Content dashboard
 
-- Card image
-- Card footer
+Card extensibility points:
+
+- Image
+- Footer
+
+*Extension version 8.5.0 and higher*:
+
+- Draft status
+- Date
+- Title
+- Description
+- Tags
 
 ### Panel
 
@@ -51,6 +61,81 @@ import { registerCardImage } from "https://cdn.jsdelivr.net/npm/@frontmatter/ext
  * @returns {string} - The HTML to be rendered in the card footer
  */
 registerCardImage(async (filePath, metadata) => {
+  return `<span>Your HTML</span>`;
+});
+```
+
+### Registering the card draft status
+
+```js
+import { registerCardStatus } from "https://cdn.jsdelivr.net/npm/@frontmatter/extensibility/+esm";
+
+/**
+ * @param {string} filePath - The path of the file
+ * @param {object} data - The metadata of the file
+ * @returns {string} - The HTML to be rendered in the card footer
+ */
+registerCardStatus(async (filePath, metadata) => {
+  return `<span>Your HTML</span>`;
+});
+```
+
+### Registering the card date
+
+```js
+import { registerCardDate } from "https://cdn.jsdelivr.net/npm/@frontmatter/extensibility/+esm";
+
+/**
+ * @param {string} filePath - The path of the file
+ * @param {object} data - The metadata of the file
+ * @returns {string} - The HTML to be rendered in the card footer
+ */
+registerCardDate(async (filePath, metadata) => {
+  return `<span>Your HTML</span>`;
+});
+```
+
+### Registering the card title
+
+```js
+import { registerCardTitle } from "https://cdn.jsdelivr.net/npm/@frontmatter/extensibility/+esm";
+
+/**
+ * @param {string} filePath - The path of the file
+ * @param {object} data - The metadata of the file
+ * @returns {string} - The HTML to be rendered in the card footer
+ */
+registerCardTitle(async (filePath, metadata) => {
+  return `<span>Your HTML</span>`;
+});
+```
+
+### Registering the card description
+
+```js
+import { registerCardDescription } from "https://cdn.jsdelivr.net/npm/@frontmatter/extensibility/+esm";
+
+/**
+ * @param {string} filePath - The path of the file
+ * @param {object} data - The metadata of the file
+ * @returns {string} - The HTML to be rendered in the card footer
+ */
+registerCardDescription(async (filePath, metadata) => {
+  return `<span>Your HTML</span>`;
+});
+```
+
+### Registering the card tags
+
+```js
+import { registerCardTags } from "https://cdn.jsdelivr.net/npm/@frontmatter/extensibility/+esm";
+
+/**
+ * @param {string} filePath - The path of the file
+ * @param {object} data - The metadata of the file
+ * @returns {string} - The HTML to be rendered in the card footer
+ */
+registerCardTags(async (filePath, metadata) => {
   return `<span>Your HTML</span>`;
 });
 ```
