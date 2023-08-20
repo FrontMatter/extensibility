@@ -17,7 +17,7 @@ Card extensibility points:
 - Image
 - Footer
 
-*Extension version 8.5.0 and higher*:
+*Extension version 9.0.0 and higher*:
 
 - Draft status
 - Date
