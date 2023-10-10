@@ -1,16 +1,24 @@
-export interface ScriptArguments {
+interface ScriptArguments {
   // Key 0
   command: string;
   // Key 1
   scriptPath: string;
   // Key 2
   workspacePath: string;
+  // Key 4 - 5 depending on content or media script
+  answers?: Answer;
+}
+
+export interface MediaArguments extends ScriptArguments {
+  // Key 3
+  mediaPath: string;
+}
+
+export interface ContentArguments extends ScriptArguments {
   // Key 3
   filePath: string;
   // Key 4
-  frontMatter?: any;
-  // Key 4 - 5 depending on content or media script
-  answers?: Answer;
+  frontMatter: any;
 }
 
 export interface Answer {

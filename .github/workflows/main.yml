@@ -12,30 +12,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
-        registry-url: https://registry.npmjs.org/
-  
-    - name: Install npm dependencies
-      run: npm ci
-  
-    - name: Run build
-      run: npm run build
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
 
-    - name: Publish release
-      run: npm publish --access public
-      if: github.ref == 'refs/heads/main'
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.FM_NPM_TOKEN}}
-        
-    - name: Update the package version
-      if: github.ref == 'refs/heads/dev'
-      run: node scripts/update-package-version.js $GITHUB_RUN_ID
-        
-    - name: Publish beta release
-      run: npm publish --tag next --access public
-      if: github.ref == 'refs/heads/dev'
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.FM_NPM_TOKEN}}
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Run build
+        run: npm run build
+
+      - name: Publish release
+        run: npm publish --access public
+        if: github.ref == 'refs/heads/main'
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.FM_NPM_TOKEN}}
+
+      - name: Update the package version
+        if: github.ref == 'refs/heads/dev'
+        run: node scripts/update-package-version.js $GITHUB_RUN_ID
+
+      - name: Publish beta release
+        run: npm publish --tag next --access public
+        if: github.ref == 'refs/heads/dev'
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.FM_NPM_TOKEN}}

@@ -1,5 +1,4 @@
-import { ScriptArguments } from "../models/ScriptArguments.js";
-import { Question } from "./../models/Question.js";
+import { Question } from "../models/Question.js";
 
 export abstract class CustomScript {
   /**
