@@ -25,7 +25,8 @@ export class ContentScript extends CustomScript {
     }
 
     try {
-      frontMatter = typeof frontMatter === "string" ? JSON.parse(frontMatter) : frontMatter;
+      frontMatter =
+        typeof frontMatter === "string" ? JSON.parse(frontMatter) : frontMatter;
     } catch (e) {
       // Failed parsing JSON
     }
@@ -46,5 +47,17 @@ export class ContentScript extends CustomScript {
       frontMatter,
       answers: Object.keys(answers).length > 0 ? answers : undefined,
     };
+  }
+
+  /**
+   * Call this method to update the front matter
+   * @param data
+   */
+  public static updateFrontMatter(data: { [fieldName: string]: any }): void {
+    console.log(
+      JSON.stringify({
+        frontmatter: data,
+      })
+    );
   }
 }
