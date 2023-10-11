@@ -13,7 +13,22 @@ export class ContentScript extends CustomScript {
     const scriptPath = args[1];
     const workspacePath = args[2];
     const filePath = args[3];
-    const frontMatter = args[4];
+    let frontMatter = args[4];
+
+    // Parse the frontmatter
+    if (frontMatter.startsWith(`"`) || frontMatter.startsWith(`'`)) {
+      frontMatter = frontMatter.slice(1);
+    }
+
+    if (frontMatter.endsWith(`"`) || frontMatter.endsWith(`'`)) {
+      frontMatter = frontMatter.slice(0, -1);
+    }
+
+    try {
+      frontMatter = typeof frontMatter === "string" ? JSON.parse(frontMatter) : frontMatter;
+    } catch (e) {
+      // Failed parsing JSON
+    }
 
     // Get all arguments after the file path
     const answerArgs = args.slice(5);
