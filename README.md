@@ -6,9 +6,75 @@
 
 # Front Matter CMS - Extensibility module
 
-This module provides a way to extend the CMS with custom functionality.
+This module provides a way to extend the CMS its UI with custom functionality, and it provides helpers for creating your custom content or media scripts.
 
-## Supported extensibility points
+## Custom scripts
+
+To make it easier to create your custom scripts, you can make use of the `@frontmatter/extensibility` module its `ContentScript` and `MediaScript` classes.
+
+### Content scripts
+
+If you want to write a script for content management in Front Matter CMS, you can make use of the `ContentScript` class. This class provides methods to retrieve the arguments, ask questions, and let the script know its done.
+
+#### Get arguments
+
+To retrieve all arguments, you can use the `getArguments` method.
+
+```js
+import { ContentScript } from '@frontmatter/extensibility';
+
+const { command, scriptPath, workspacePath, filePath, frontMatter, answers } = ContentScript.getArguments();
+```
+
+#### Ask questions
+
+To ask a question to the user in the CMS, you can use the `askQuestions` method:
+
+```js
+if (!answers) {
+  MediaScript.askQuestions([{
+    name: "customId",
+    message: "Which ID do you want to use?",
+    default: ""
+  }]);
+  return;
+}
+```
+
+> **Important**: Front Matter will execute the same script, so you first need to check if the answers were provided.
+
+You can retrieve the answer from the `answers` object:
+
+```js
+const customId = answers.customId;
+```
+
+#### Update front matter
+
+To let the CMS know you want to update the article its front matter, you can make use of the `updateFrontMatter` method:
+
+```js
+ContentScript.updateFrontMatter({
+  "field": "value"
+});
+```
+
+#### Done
+
+To let the CMS know you are done with your script, you can make use of the `done` method:
+
+```js
+ContentScript.done("The script is done");
+```
+
+### Media scripts
+
+The `MediaScript` class provides the same functionality as the `ContentScript` class, but it is used for media management scripts. There are a couple differences:
+
+- Arguments will not provide the `frontMatter` object;
+- You cannot make use of the `updateFrontMatter` method.
+
+## UI extensibility
 
 ### Content dashboard
 
