@@ -1,6 +1,6 @@
 {
   "name": "@frontmatter/extensibility",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Front Matter CMS extensibility library",
   "type": "module",
   "module": "dist/index.js",
