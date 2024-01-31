@@ -41,6 +41,24 @@ if (!answers) {
 }
 ```
 
+In case you want to have a multi-select question, you can just add the options to the question:
+
+```js
+if (!answers) {
+  MediaScript.askQuestions([{
+    name: "category",
+    message: "Which category do you want to use?",
+    options: [
+      "Category 1",
+      "Category 2",
+      "Category 3"
+    ]
+  }]);
+  return;
+}
+```
+
+
 > **Important**: Front Matter will execute the same script, so you first need to check if the answers were provided.
 
 You can retrieve the answer from the `answers` object:
