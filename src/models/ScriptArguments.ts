@@ -21,7 +21,7 @@ export interface ContentArguments extends ScriptArguments {
   frontMatter: any;
 }
 
-export interface PlaceholderArguments extends ContentArguments {
+export interface PlaceholderArguments extends ScriptArguments {
   // Key 3
   filePath: string;
   // Key 4

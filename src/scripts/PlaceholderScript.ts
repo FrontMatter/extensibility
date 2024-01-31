@@ -30,6 +30,6 @@ export class PlaceholderScript extends CustomScript {
       filePath,
       title,
       answers: Object.keys(answers).length > 0 ? answers : undefined,
-    } as PlaceholderArguments;
+    };
   }
 }
