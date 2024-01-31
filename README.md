@@ -10,7 +10,7 @@ This module provides a way to extend the CMS its UI with custom functionality, a
 
 ## Custom scripts
 
-To make it easier to create your custom scripts, you can make use of the `@frontmatter/extensibility` module its `ContentScript` and `MediaScript` classes.
+To make it easier to create your custom scripts, you can make use of the `@frontmatter/extensibility` module its `ContentScript`, `MediaScript`, and `PlaceholderScript` classes.
 
 ### Content scripts
 
@@ -73,6 +73,10 @@ The `MediaScript` class provides the same functionality as the `ContentScript` c
 
 - Arguments will not provide the `frontMatter` object;
 - You cannot make use of the `updateFrontMatter` method.
+
+### Placeholder scripts
+
+The `PlaceholderScript` class provides the same functionality as the `ContentScript` class, but it is used for placeholders which can be used on content creation. The main difference between the `ContentScript` and `PlaceholderScript` is that it will not provide the `frontMatter` object. Instead it returns the `title` of the page.
 
 ## UI extensibility
 
