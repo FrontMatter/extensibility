@@ -14,6 +14,17 @@ export abstract class CustomScript {
   }
 
   /**
+   * Opens a file or page once the script has finished.
+   * @param fileOrPagePath - The path of the file or page to open.
+   */
+  public static open(fileOrPagePath: string): void {
+    JSON.stringify({
+      fmAction: "open",
+      fmPath: fileOrPagePath,
+    });
+  }
+
+  /**
    * Call this method to indicate that the script has finished.
    * @param log
    */

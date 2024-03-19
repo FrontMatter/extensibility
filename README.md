@@ -58,7 +58,6 @@ if (!answers) {
 }
 ```
 
-
 > **Important**: Front Matter will execute the same script, so you first need to check if the answers were provided.
 
 You can retrieve the answer from the `answers` object:
@@ -75,6 +74,14 @@ To let the CMS know you want to update the article its front matter, you can mak
 ContentScript.updateFrontMatter({
   "field": "value"
 });
+```
+
+#### Open a file or page on completion
+
+To let the CMS know you want to open a file or page after the script is done, you can make use of the `open` method:
+
+```js
+ContentScript.open("https://frontmatter.codes");
 ```
 
 #### Done
