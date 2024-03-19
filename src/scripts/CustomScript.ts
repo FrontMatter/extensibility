@@ -18,10 +18,12 @@ export abstract class CustomScript {
    * @param fileOrPagePath - The path of the file or page to open.
    */
   public static open(fileOrPagePath: string): void {
-    JSON.stringify({
-      fmAction: "open",
-      fmPath: fileOrPagePath,
-    });
+    console.log(
+      JSON.stringify({
+        fmAction: "open",
+        fmPath: fileOrPagePath,
+      })
+    );
   }
 
   /**
