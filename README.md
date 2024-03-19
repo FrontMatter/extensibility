@@ -81,7 +81,11 @@ ContentScript.updateFrontMatter({
 To let the CMS know you want to open a file or page after the script is done, you can make use of the `open` method:
 
 ```js
+// Open a URL
 ContentScript.open("https://frontmatter.codes");
+
+// Or open a file
+ContentScript.open("./path/to/file.md");
 ```
 
 #### Done
