@@ -34,4 +34,53 @@ export class MediaScript extends CustomScript {
       answers: Object.keys(answers).length > 0 ? answers : undefined,
     };
   }
+
+  /**
+   * Copies the metadata from the source file to the destination file.
+   * @param sourcePath - The path of the source file.
+   * @param destinationPath - The path of the destination file.
+   */
+  public static copyMetadata(
+    sourcePath: string,
+    destinationPath: string
+  ): void {
+    console.log(
+      JSON.stringify({
+        fmAction: "copyMediaMetadata",
+        fmSourcePath: sourcePath,
+        fmDestinationPath: destinationPath,
+      })
+    );
+  }
+
+  /**
+   * Copies the metadata from the source file to the destination file and deletes the source file.
+   * @param sourcePath - The path of the source file.
+   * @param destinationPath - The path of the destination file.
+   */
+  public static copyMetadataAndDelete(
+    sourcePath: string,
+    destinationPath: string
+  ): void {
+    console.log(
+      JSON.stringify({
+        fmAction: "copyMediaMetadataAndDelete",
+        fmSourcePath: sourcePath,
+        fmDestinationPath: destinationPath,
+      })
+    );
+  }
+
+  /**
+   * Deletes a media file.
+   * @param filePath - The path of the file to be deleted.
+   */
+  public static delete(filePath: string): void {
+    console.log(
+      JSON.stringify({
+        fmAction: "deleteMedia",
+        fmPath: filePath,
+      })
+    );
+  }
 }

@@ -103,6 +103,12 @@ The `MediaScript` class provides the same functionality as the `ContentScript` c
 - Arguments will not provide the `frontMatter` object;
 - You cannot make use of the `updateFrontMatter` method.
 
+Additionally, they provide the following methods:
+
+- `MediaScript.copyMetadata(source, destination)`: This method will copy the metadata from the source file to the destination file.
+- `MediaScript.copyMetadataAndDelete(source, destination)`; This method will copy the metadata from the source file to the destination file and delete the source file.
+- `MediaScript.delete(source)`: This method will delete the source file.
+
 ### Placeholder scripts
 
 The `PlaceholderScript` class provides the same functionality as the `ContentScript` class, but it is used for placeholders which can be used on content creation. The main difference between the `ContentScript` and `PlaceholderScript` is that it will not provide the `frontMatter` object. Instead it returns the `title` of the page.
