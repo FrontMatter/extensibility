@@ -2,7 +2,7 @@ import { ContentArguments } from "../models/ScriptArguments.js";
 import { getArguments } from "../utils/getArguments.js";
 import { CustomScript } from "./CustomScript.js";
 
-export class ContentScript extends CustomScript {
+export class FieldAction extends CustomScript {
   /**
    * Retrieve the arguments passed to the script
    * @returns
@@ -11,13 +11,15 @@ export class ContentScript extends CustomScript {
     getArguments();
 
   /**
-   * Call this method to update the front matter
-   * @param data
+   * Updates the field value
+   *
+   * @param fieldValue - The new value for the field.
    */
-  public static updateFrontMatter(data: { [fieldName: string]: any }): void {
+  public static update(fieldValue: any): void {
     console.log(
       JSON.stringify({
-        frontmatter: data,
+        fmAction: "fieldAction",
+        fmFieldValue: fieldValue,
       })
     );
   }
