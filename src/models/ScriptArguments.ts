@@ -7,6 +7,7 @@ interface ScriptArguments {
   workspacePath: string;
   // Key 4 - 5 depending on content or media script
   answers?: Answer;
+  promptResponse?: string;
 }
 
 export interface MediaArguments extends ScriptArguments {

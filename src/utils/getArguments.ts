@@ -25,9 +25,16 @@ export const getArguments = () => {
 
   // Get all arguments after the file path
   const answerArgs = args.slice(5);
+  let promptResponse: string | undefined;
   const answers = answerArgs.reduce((acc, curr) => {
     const [key, value] = curr.split("=");
-    acc[key] = value;
+
+    if (key === "promptResponse") {
+      promptResponse = value;
+    } else {
+      acc[key] = value;
+    }
+
     return acc;
   }, {} as { [key: string]: string });
 
@@ -38,5 +45,6 @@ export const getArguments = () => {
     filePath,
     frontMatter,
     answers: Object.keys(answers).length > 0 ? answers : undefined,
+    promptResponse,
   };
 };

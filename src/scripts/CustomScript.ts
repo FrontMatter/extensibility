@@ -14,6 +14,19 @@ export abstract class CustomScript {
   }
 
   /**
+   * Call this method to prompt GitHub Copilot
+   * @param prompt
+   */
+  public static promptCopilot(prompt: string): void {
+    console.log(
+      JSON.stringify({
+        fmAction: "promptCopilot",
+        fmPrompt: prompt,
+      })
+    );
+  }
+
+  /**
    * Opens a file or page once the script has finished.
    * @param fileOrPagePath - The path of the file or page to open.
    */
